@@ -8,24 +8,19 @@ import os
 
 # Endpoint 1
 
-# **def PlayTimeGenre( genero : str ):** Debe devolver año con mas horas jugadas para dicho género.
-# Ejemplo de retorno: {"Año de lanzamiento con más horas jugadas para Género X" : 2013}
-# Input: **PlayTimeGenre.csv**
+# def Playtime_Genre( genero : str ): Returns the year with the most hours played for that genre.
+# Example return: {"Year of release with most hours played for Genre X" : 2013}
+# Input: playtimegenre.csv
 
 def Playtime_Genre(genero: str):
     df = pd.read_csv('./Notebooks/Datasets/api/playtimegenre.csv')
 
-    # Filtrar el DataFrame para el género específico
-    df_genre = df[df['genres'] == genero]
+    df_genre = df[df['genres'] == genero]       # ---> Filter the DataFrame for the required gender
     
-    # Agrupar por año de lanzamiento y sumar las horas jugadas
-    df_genre_grouped = df_genre.groupby('released_year')['hours_game'].sum()
+    df_genre_grouped = df_genre.groupby('released_year')['hours_game'].sum()    # ---> Group by year of release, and add up the hours played
     
-    # Encontrar el año con más horas jugadas
-    max_hours_year = df_genre_grouped.idxmax()
+    max_hours_year = df_genre_grouped.idxmax()  # ---> Find the year with the most hours played
 
-    # Construye el response_data
-    response_data = {"Año de lanzamiento con más horas jugadas para {}: {}".format(genero, max_hours_year)}
+    response_data = {"Year of release with most hours played for {}: {}".format(genero, max_hours_year)}
 
-    # Muestra el resultado
     return response_data
