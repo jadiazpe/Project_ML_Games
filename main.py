@@ -7,21 +7,20 @@ import pandas as pd
 from api_functions import Playtime_Genre
 
 
-#### Crea una instancia de la aplicación FastAPI
 app = FastAPI()
 
 
 @app.get("/")
 async def root():
     """
-    Proyecto FastAPI - Sistema de Recomendaciones
+    System of Recomendation for Video Games
 
-    Versión: 1.0.0
+    Release : 1.0.0
 
     ---
 
     """
-    return {"Mensaje": "Proyecto Individual - Jairo Díaz"}
+    return {"Message": "Individual Project - Jairo Díaz"}
 
 
 # Endpoint 1
@@ -29,22 +28,21 @@ async def root():
 @app.get("/Playtime_Genre/{genero}")
 async def endpoint1(genero: str):
     """
-    Descripción: Retorna el año con más horas jugadas para un género dado.
+    ---> Description: Return the year with the most hours played for a given genre.
+    ---> Parameters:
+         genero (str): Genre of the video game for which the year with the most hours played is searched. Must be a string, example: Indie
     
-    Parámetros:
-        - genero (str): Género para el cual se busca el año con más horas jugadas. Debe ser un string, ejemplo: Action
-    
-    Ejemplo de retorno: {"Año de lanzamiento con más horas jugadas para Género Action" : 2012}
+    ---> Example of return: {"Year of release with more hours played for Action Genre" : 2012}
     """
     try:
-        # Validación adicional para asegurarse de que el género no sea nulo o esté vacío
-        if not genero or not genero.strip():
+        
+        if not genero or not genero.strip():        # ---> Routine to ensure input is not null or empty
             raise HTTPException(status_code=422, detail="El parámetro 'genero' no puede ser nulo o estar vacío.")
 
         result = Playtime_Genre(genero)
     
-        # Validación para verificar si el género existe en los datos
-        if not result:
+       
+        if not result:                              # ---> Routine to check if data exists
             raise HTTPException(status_code=404, detail=f"No se encontró información para el género '{genero}'.")
 
         return result
