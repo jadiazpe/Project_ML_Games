@@ -7,7 +7,7 @@ import pandas as pd
 from api_functions import Playtime_Genre
 
 
-# Crea una instancia de la aplicación FastAPI
+#### Crea una instancia de la aplicación FastAPI
 app = FastAPI()
 
 
