@@ -152,7 +152,7 @@ released_year,genres,hours_game
 2007,Adventure,6653.24
 2007,Audio Production,184.8
 2007,Casual,12158.94
-2007,Design &amp; Illustration,184.8
+2007,Design  Illustration,184.8
 2007,Free to Play,3541.91
 2007,Indie,22336.16
 2007,Massively Multiplayer,1962.03
@@ -167,9 +167,9 @@ released_year,genres,hours_game
 2007,Web Publishing,184.8
 2008,Action,558996.18
 2008,Adventure,54536.54
-2008,Animation &amp; Modeling,34.36
+2008,Animation  Modeling,34.36
 2008,Casual,9491.46
-2008,Design &amp; Illustration,34.36
+2008,Design  Illustration,34.36
 2008,Education,34.36
 2008,Free to Play,3592.11
 2008,Indie,87524.94
@@ -217,9 +217,9 @@ released_year,genres,hours_game
 2011,Strategy,575220.61
 2012,Action,18093686.49
 2012,Adventure,1223195.64
-2012,Animation &amp; Modeling,298.58
+2012,Animation  Modeling,298.58
 2012,Casual,339372.78
-2012,Design &amp; Illustration,32172.58
+2012,Design  Illustration,32172.58
 2012,Early Access,53510.41
 2012,Free to Play,1921139.02
 2012,Indie,2052653.92
@@ -235,10 +235,10 @@ released_year,genres,hours_game
 2012,Web Publishing,32172.58
 2013,Action,6910695.3
 2013,Adventure,2503736.49
-2013,Animation &amp; Modeling,7240.72
+2013,Animation  Modeling,7240.72
 2013,Audio Production,571.67
 2013,Casual,214649.21
-2013,Design &amp; Illustration,4880.18
+2013,Design  Illustration,4880.18
 2013,Early Access,1981592.5
 2013,Education,5676.36
 2013,Free to Play,2436900.97
@@ -255,10 +255,10 @@ released_year,genres,hours_game
 2013,Web Publishing,5561.5
 2014,Action,2777082.31
 2014,Adventure,1168534.1
-2014,Animation &amp; Modeling,1325.47
+2014,Animation  Modeling,1325.47
 2014,Audio Production,7591.02
 2014,Casual,419961.96
-2014,Design &amp; Illustration,3210.97
+2014,Design  Illustration,3210.97
 2014,Early Access,187321.16
 2014,Education,375.74
 2014,Free to Play,670114.04
@@ -276,10 +276,10 @@ released_year,genres,hours_game
 2014,Web Publishing,560.8
 2015,Action,4364111.78
 2015,Adventure,3007751.16
-2015,Animation &amp; Modeling,22426.42
+2015,Animation  Modeling,22426.42
 2015,Audio Production,84.35
 2015,Casual,1361811.34
-2015,Design &amp; Illustration,25567.53
+2015,Design  Illustration,25567.53
 2015,Early Access,225595.73
 2015,Education,601.4
 2015,Free to Play,2143926.79
@@ -297,10 +297,10 @@ released_year,genres,hours_game
 2015,Web Publishing,5811.27
 2016,Action,1596480.22
 2016,Adventure,1035644.44
-2016,Animation &amp; Modeling,1911.87
+2016,Animation  Modeling,1911.87
 2016,Audio Production,7.64
 2016,Casual,729613.1
-2016,Design &amp; Illustration,1876.74
+2016,Design  Illustration,1876.74
 2016,Early Access,162392.32
 2016,Education,38.73
 2016,Free to Play,388304.98
@@ -319,7 +319,7 @@ released_year,genres,hours_game
 2017,Action,2105577.5
 2017,Adventure,1547213.35
 2017,Casual,848710.21
-2017,Design &amp; Illustration,0.36
+2017,Design  Illustration,0.36
 2017,Early Access,569.91
 2017,Education,156.37
 2017,Free to Play,1437260.93
