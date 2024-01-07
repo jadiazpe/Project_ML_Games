@@ -83,7 +83,7 @@ def UsersWorstDeveloper(year:int):
 
 def Sentiment_Analysis(developer:str):
     df5 = pd.read_csv('./Notebooks/Datasets/api/sentiment_analysis.csv')
-    
+    developer = developer.capitalize()
     df_sentiment = df5[df5['developer'] == developer]    # ---> Filter the DataFrame for the input developer
 
     response_data5 = df_sentiment.set_index('developer').to_dict(orient='index')
