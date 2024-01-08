@@ -4,28 +4,29 @@ from fastapi.responses import JSONResponse
 import traceback  
 from typing import List, Dict
 import pandas as pd
-from api_functions import PlayTimeGenre, UserForGenre, UsersRecommend, UsersWorstDeveloper, Sentiment_Analysis
+from api_functions import PlayTimeGenre, UserForGenre, UsersRecommend, UsersWorstDeveloper, Sentiment_Analysis, Recommendation_Item
 
 app = FastAPI()
 
-@app.get("/")
+@app.get("/", tags=["System of Recomendation for Video Games"])
 async def root():
     '''
     System of Recomendation for Video Games
-    Release 1.0.0
+    | STEAM-PROJECT 
+    | JD Labs
     '''
-    return {"Message": "Individual Project LABS - Jairo Díaz"}
+    return {"Message" : "Individual Project LABS - Jairo Díaz"}
 
 
-# Endpoint 1
+# -------- Endpoint 1
 
-@app.get("/PlayTimeGenre/{genre}")
+@app.get("/PlayTimeGenre/{genre}", tags=["Endpoint 1 : PlayTimeGenre"])
 async def endpoint1(genre:str):
     '''
-    *---> Description: Return the year with the most hours played for a given genre.
-    *---> Parameters:
-          genre (str): Genre for which the year with the most hours played is searched. Must be a string, e.g.: Indie.
-    *---> Sample of return: {"Release year with the highest number of hours of gameplay for the << X >> genre is : aaaa"}
+    |---| "Description": Return the year with the most hours played for a given genre.
+    |---| "Parameters":
+          <genre (str)>: Genre for which the year with the most hours played is searched. Must be a string, e.g.: Indie.
+    |---| "Sample of return": {"Release year with the highest number of hours of gameplay for the << X >> genre is : aaaa"}
     '''
     try:
         if not genre or not genre.strip():        # ---> Routine to ensure input is not null or empty
@@ -35,7 +36,6 @@ async def endpoint1(genre:str):
     
         if not result:                              # ---> Routine to check if data exists
             raise HTTPException(status_code=404, detail=f"No information was found for the genre '{genre}'.")
-
         return result
     
     except FileNotFoundError as e:
@@ -45,15 +45,15 @@ async def endpoint1(genre:str):
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
 
 
-# Endpoint 2
+# -------- Endpoint 2
     
-@app.get("/UserForGenre/{genre}")
+@app.get("/UserForGenre/{genre}", tags=["Endpoint 2 : UserForGenre"])
 async def endpoint2(genre:str):
     '''
-    *---> Description: Returns the user who accumulates the most hours played for a given genre, and a list of the accumulation of hours played per year.
-    *---> Parameters:
-          genre (str): Genre required to search for the user with the most hours played. Must be a string, e.g.: Adventure.
-    *---> Sample of return: {"The user with the highest number of hours played for the << X >> genre is": "user", "Played hours":[{Year: xxxx, Hours: xxxx}]}
+    |---| "Description": Returns the user who accumulates the most hours played for a given genre, and a list of the accumulation of hours played per year.
+    |---| "Parameters":
+          <genre (str)>: Genre required to search for the user with the most hours played. Must be a string, e.g.: Adventure.
+    |---| "Sample of return": {"The user with the highest number of hours played for the << X >> genre is": "user", "Played hours":[{Year: xxxx, Hours: xxxx}]}
     '''
     try:
         if not genre or not genre.strip():        # ---> Routine to ensure input is not null or empty
@@ -62,8 +62,7 @@ async def endpoint2(genre:str):
         result = UserForGenre(genre)
         
         if not result:                              # ---> Routine to check if data exists
-            raise HTTPException(status_code=404, detail=f"No information was found for the genre '{genre}'.")
-            
+            raise HTTPException(status_code=404, detail=f"No information was found for the genre '{genre}'.")      
         return result
     
     except FileNotFoundError as e:
@@ -73,15 +72,15 @@ async def endpoint2(genre:str):
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
     
 
-# Endpoint 3
+# -------- Endpoint 3
 
-@app.get("/UsersRecommend/{year}")
-async def endpoint3(year:str):
+@app.get("/UsersRecommend/{year}", tags=["Endpoint 3 : UserRecommend"])
+async def endpoint3(year:int):
     '''
-    *---> Description: Return to the top 3 most recommended games by users for the given year (range: 2006 <= year <= 2017).
-    *---> Parameters:
-          year (str): Year for which the top 3 most recommended games are returned. Must be a 4 digit number, e.g.: 2015.
-    *---> Sample of return: [{"Place 1" : X}, {"Place 2" : Y},{"Place 3" : Z}]
+    |---| "Description": Return to the top 3 most recommended games by users for the given year (range: 2006 <= year <= 2017).
+    |---| "Parameters":
+          <year (int)>: Year for which the top 3 most recommended games are returned. Must be a 4 digit number, e.g.: 2009.
+    |---| "Sample of return": [{"Place 1" : X}, {"Place 2" : Y},{"Place 3" : Z}]
     '''
     try:
         year = int(year)
@@ -106,15 +105,15 @@ async def endpoint3(year:str):
         return JSONResponse(status_code=500, content={"error": error_message})
     
 
-# Endpoint 4
+# -------- Endpoint 4
 
-@app.get("/UsersWorstDeveloper/{year}")
-async def endpoint4(year:str):
+@app.get("/UsersWorstDeveloper/{year}", tags=["Endpoint 4 : UserWorstDeveloper"])
+async def endpoint4(year:int):
     '''
-    *---> Description: Returns the top 3 developers with the least recommended games by users for the given year (range: 2006 <= year <= 2017)..
-    *---> Parameters:
-          year (str): Year for which the top 3 least recommended developers are returned. Must be a 4 digit number, e.g.: 2013.
-    *---> Sample of return : [{"Place 1" : X}, {"Place 2" : Y},{"Place 3" : Z}]
+    |---| "Description": Returns the top 3 developers with the least recommended games by users for the given year (range: 2006 <= year <= 2017).
+    |---| "Parameters":
+          <year (int)>: Year for which the top 3 least recommended developers are returned. Must be a 4 digit number, e.g.: 2011.
+    |---| "Sample of return": [{"Place 1" : X}, {"Place 2" : Y},{"Place 3" : Z}]
     '''
     try:
         year = int(year)
@@ -124,30 +123,29 @@ async def endpoint4(year:str):
             return JSONResponse(status_code=500, content={"error": error_message})
 
         result = UsersWorstDeveloper(year)
-
         return result
     
     except FileNotFoundError as e:
         raise HTTPException(status_code=500, detail=f"Error loading file worstdeveloper.csv: {str(e)}")
-    
     except Exception as e:
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
     
 
-# Endpoint 5
+# -------- Endpoint 5
 
-@app.get("/Sentiment_Analysis/{developer}")
+@app.get("/Sentiment_Analysis/{developer}", tags=["Endpoint 5 : Sentiment_Analysis"])
 async def enpoint5(developer:str):
     '''
-    *---> Description: Returns a dictionary with the name of the developer entered as a key and a list of the total number of user review records categorized by sentiment analysis.
-    *---> Parameters:
-          developer (str): Name of the developer company for which the sentiment analysis is performed. Must be a string, e.g.: Valve
-    *---> Sample of return: {'Valve' : [Negative = xxxx, Neutral = xxxx, Positive = xxxx]}
+    |---| "Description": Returns a dictionary with the name of the developer entered as a key and a list of the total number of user review records categorized by sentiment analysis.
+    |---| "Parameters":
+          <developer (str)>: Name of the developer company for which the sentiment analysis is performed. Must be a string, e.g.: Valve
+    |---| "Sample of return": {'Valve' : [Negative = xxxx, Neutral = xxxx, Positive = xxxx]}
     '''
     try:
         result = Sentiment_Analysis(developer)
         return result
+    
     except FileNotFoundError as e:
         raise HTTPException(status_code=500, detail=f"Error loading file sentiment_analysis.csv: {str(e)}")
     except Exception as e:
@@ -155,24 +153,20 @@ async def enpoint5(developer:str):
         raise HTTPException(status_code=500, detail=f"Internal server error: {str(e)}")
 
    
-# ML - Recommendation: item-item
+# -------- ML - Recommendation: item-item
 
-'''
-@app.get("/Game_Recommendation/{item_id}")
-async def Game_Recommendation(item_id:int):
-    
-    *---> Descripción: Ingresando el id de producto, devuelve una lista con 5 juegos recomendados similares al ingresado.
-    *---> Parámetros:
-          item_id (str): Id del producto para el cual se busca la recomendación. Debe ser un número, ejemplo: 761140
-    *---> Ejemplo de retorno: "['弹炸人2222', 'Uncanny Islands', 'Beach Rules', 'Planetarium 2 - Zen Odyssey', 'The Warrior Of Treasures']"
-    
+@app.get("/Recommendation_Item/{item_id}", tags=["<<< Recommended Games based on the ITEM ID >>>"])
+async def item(item_id: int):
+    """
+    |---| "Description": Returns a list of the 5 recommended games that are similar to the entered title.
+    |---| "Parameters":
+          item_id (int): Id of the product that is used as reference to consult the recommendation. Must be a number, e.g.: 63700
+    |---| "Sample of return": "['Runespell: Overture', 'Rush for Glory', 'Bridge Constructor', 'rymdkapsel', 'Defense Zone 2']"
+    """
     try:
         item_id = int(item_id) 
-        result= Game_Recommendation(item_id)
-    
+        result= Recommendation_Item(item_id)  
         return result
     
     except Exception as e:
-    
         return {"error":str(e)}
-'''

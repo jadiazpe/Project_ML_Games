@@ -83,7 +83,7 @@ def UsersWorstDeveloper(year:int):
 
 def Sentiment_Analysis(developer:str):
     df5 = pd.read_csv('./Notebooks/Datasets/api/sentiment_analysis.csv')
-    developer = developer.capitalize()
+    
     df_sentiment = df5[df5['developer'] == developer]    # ---> Filter the DataFrame for the input developer
 
     response_data5 = df_sentiment.set_index('developer').to_dict(orient='index')
@@ -93,13 +93,14 @@ def Sentiment_Analysis(developer:str):
 
 # ML - Recommendation: item-item
 
-'''
-def Game_Recommendation(item_id):
-    df_ml = pd.read_csv('./Notebooks/Datasets/ml/recomienda_item_item.csv')       
+# def Recommendation_Item(item_id : int): Takes as input the ID of a game, and returns a list of the five (5) most recommended games based on the cosine similarity between the vectors.
+# Input: item_item_recommendation.csv
+
+def Recommendation_Item(item_id:int):
+    df_ml = pd.read_csv('./Notebooks/Datasets/ml/item_item_recommendation.csv')
     
-    df_ml1 = df_ml[df_ml['item_id'] == item_id]            # ---> Filter the DataFrame for the input 'item-id'
+    df_ml1 = df_ml[df_ml['item_id'] == item_id]         # ---> Filter the DataFrame for the input 'item-id'
     
-    response_data_ml = df_ml1['Recomendaciones']
+    response_data_ml = df_ml1['recommendations'].tolist()        
  
     return response_data_ml
-'''
