@@ -24,8 +24,10 @@ async def root():
 async def endpoint1(genre:str):
     '''
     |---| "Description": Return the year with the most hours played for a given genre.
-    |---| "Parameters":
-          <genre (str)>: Genre for which the year with the most hours played is searched. Must be a string, e.g.: Indie.
+    
+    |---| "Parameters (input)":
+          <genre (str)>: Must be a string, e.g.: Indie.
+    
     |---| "Sample of return": {"Release year with the highest number of hours of gameplay for the << X >> genre is : aaaa"}
     '''
     try:
@@ -51,8 +53,10 @@ async def endpoint1(genre:str):
 async def endpoint2(genre:str):
     '''
     |---| "Description": Returns the user who accumulates the most hours played for a given genre, and a list of the accumulation of hours played per year.
-    |---| "Parameters":
-          <genre (str)>: Genre required to search for the user with the most hours played. Must be a string, e.g.: Adventure.
+    
+    |---| "Parameters (input)":
+          <genre (str)>: Must be a string, e.g.: Adventure.
+    
     |---| "Sample of return": {"The user with the highest number of hours played for the << X >> genre is": "user", "Played hours":[{Year: xxxx, Hours: xxxx}]}
     '''
     try:
@@ -78,8 +82,10 @@ async def endpoint2(genre:str):
 async def endpoint3(year:int):
     '''
     |---| "Description": Return to the top 3 most recommended games by users for the given year (range: 2006 <= year <= 2017).
-    |---| "Parameters":
-          <year (int)>: Year for which the top 3 most recommended games are returned. Must be a 4 digit number, e.g.: 2009.
+    
+    |---| "Parameters (input)":
+          <year (int)>: Must be a 4 digit number, e.g.: 2009.
+    
     |---| "Sample of return": [{"Place 1" : X}, {"Place 2" : Y},{"Place 3" : Z}]
     '''
     try:
@@ -111,8 +117,10 @@ async def endpoint3(year:int):
 async def endpoint4(year:int):
     '''
     |---| "Description": Returns the top 3 developers with the least recommended games by users for the given year (range: 2006 <= year <= 2017).
-    |---| "Parameters":
-          <year (int)>: Year for which the top 3 least recommended developers are returned. Must be a 4 digit number, e.g.: 2011.
+    
+    |---| "Parameters (input)":
+          <year (int)>: Must be a 4 digit number, e.g.: 2011.
+    
     |---| "Sample of return": [{"Place 1" : X}, {"Place 2" : Y},{"Place 3" : Z}]
     '''
     try:
@@ -138,8 +146,10 @@ async def endpoint4(year:int):
 async def enpoint5(developer:str):
     '''
     |---| "Description": Returns a dictionary with the name of the developer entered as a key and a list of the total number of user review records categorized by sentiment analysis.
-    |---| "Parameters":
+    
+    |---| "Parameters (input)":
           <developer (str)>: Name of the developer company for which the sentiment analysis is performed. Must be a string, e.g.: Valve
+    
     |---| "Sample of return": {'Valve' : [Negative = xxxx, Neutral = xxxx, Positive = xxxx]}
     '''
     try:
@@ -159,8 +169,10 @@ async def enpoint5(developer:str):
 async def item(item_id: int):
     """
     |---| "Description": Returns a list of the 5 recommended games that are similar to the entered title.
-    |---| "Parameters":
-          item_id (int): Id of the product that is used as reference to consult the recommendation. Must be a number, e.g.: 63700
+    
+    |---| "Parameters (input)":
+          item_id (int): Must be a number, e.g.: 63700
+    
     |---| "Sample of return": "['Runespell: Overture', 'Rush for Glory', 'Bridge Constructor', 'rymdkapsel', 'Defense Zone 2']"
     """
     try:
