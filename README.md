@@ -28,9 +28,9 @@ STEAM has enlisted the expertise of JD Labs to create an automated game recommen
 ### I.1 Extraction, Transformation and Load (ETL) <br />
 
 The source files provided by STEAM are three (3) and come in JSON formats:
-- [australian_user_items.json](https://drive.google.com/drive/folders/10mZQbzMeA77nXgndqvJDuaFTcRqud0WB?usp=sharing)
-- [australian_user_reviews.json](https://drive.google.com/drive/folders/10mZQbzMeA77nXgndqvJDuaFTcRqud0WB?usp=sharing)
-- [output_steam_games.json](https://drive.google.com/drive/folders/10mZQbzMeA77nXgndqvJDuaFTcRqud0WB?usp=sharing)
+- [australian_user_items.json](https://drive.google.com/drive/folders/10mZQbzMeA77nXgndqvJDuaFTcRqud0WB?usp=sharing) Public access via Google Drive
+- [australian_user_reviews.json](https://drive.google.com/drive/folders/10mZQbzMeA77nXgndqvJDuaFTcRqud0WB?usp=sharing) Public access via Google Drive
+- [output_steam_games.json](https://drive.google.com/drive/folders/10mZQbzMeA77nXgndqvJDuaFTcRqud0WB?usp=sharing) Public access via Google Drive
 
 After the ETL processes (see files [ETL_items](Notebooks/ETL_items.ipynb), [ETL_reviews](Notebooks/ETL_reviews.ipynb), [ETL_games](Notebooks/ETL_games.ipynb)), four (4) CSV files were obtained with clean data that will be consumed by the API. Additionally, these files form the foundation for the EDA study:
 
