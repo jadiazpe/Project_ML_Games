@@ -56,7 +56,7 @@ The functions that make up the body of the API were generated to respond promptl
 - [playtimegenre.csv](Notebooks/Datasets/api/playtimegenre.csv)
 - [userforgenre.csv](Notebooks/Datasets/api/userforgenre.csv)
 - [usersrecommend.csv](Notebooks/Datasets/api/usersrecommend.csv)
-- [usersworstdeveloper.csv](Notebooks/Datasets/api/usersworstdeveloper.csv)
+- [worstdeveloper.csv](Notebooks/Datasets/api/worstdeveloper.csv)
 - [sentiment_analysis.csv](Notebooks/Datasets/api/sentiment_analysis.csv)
 - [item_item_recommendation.csv](Notebooks/Datasets/ml/item_item_recommendation.csv)
 
