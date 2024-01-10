@@ -3,7 +3,7 @@
 
 <br />
 
-# VIDEO GAME REFERRAL SYSTEM FOR STEAM USERS
+# VIDEO GAME RECOMMENDATION SYSTEM FOR STEAM USERS
 
 ### About STEAM
 STEAM is a digital video game distribution platform developed by Valve Corporation, which allows users to purchase, download and play a wide variety of games online. In addition to being a game store, STEAM also offers social and community features, such as chats, groups and the ability to share personalized content.
@@ -22,29 +22,30 @@ STEAM has enlisted the expertise of JD Labs to create an automated game recommen
 <br />
 
 # Project Stages
+![steamstages](https://github.com/jadiazpe/Project_ML_Games/raw/main/src_img/Steamstages.png)
 <br />
 
 ## I. Development <br />
 ### I.1 Extraction, Transformation and Load (ETL) <br />
 
-The source files provided by STEAM are three (3) and come in JSON formats:
-- [australian_user_items.json](https://drive.google.com/drive/folders/10mZQbzMeA77nXgndqvJDuaFTcRqud0WB?usp=sharing) Public access via Google Drive
-- [australian_user_reviews.json](https://drive.google.com/drive/folders/10mZQbzMeA77nXgndqvJDuaFTcRqud0WB?usp=sharing) Public access via Google Drive
-- [output_steam_games.json](https://drive.google.com/drive/folders/10mZQbzMeA77nXgndqvJDuaFTcRqud0WB?usp=sharing) Public access via Google Drive
+The source files provided by STEAM are three (3) and come in JSON formats (all can be accessed via Google Drive, just click on them):
+- [australian_user_items.json](https://drive.google.com/drive/folders/10mZQbzMeA77nXgndqvJDuaFTcRqud0WB?usp=sharing)
+- [australian_user_reviews.json](https://drive.google.com/drive/folders/10mZQbzMeA77nXgndqvJDuaFTcRqud0WB?usp=sharing)
+- [output_steam_games.json](https://drive.google.com/drive/folders/10mZQbzMeA77nXgndqvJDuaFTcRqud0WB?usp=sharing)
 
-After the ETL processes (see files [ETL_items](Notebooks/ETL_items.ipynb), [ETL_reviews](Notebooks/ETL_reviews.ipynb), [ETL_games](Notebooks/ETL_games.ipynb)), four (4) CSV files were obtained with clean data that will be consumed by the API. Additionally, these files form the foundation for the EDA study:
+After the ETL processes (see files [ETL_items](Notebooks/ETL_items.ipynb), [ETL_reviews](Notebooks/ETL_reviews.ipynb), [ETL_games](Notebooks/ETL_games.ipynb)), four (4) CSV files were obtained with clean data that will be consumed by the API (all can be accessed via Google Drive, just click on them):
 
 - [items.csv](https://drive.google.com/drive/folders/12wM7n_ZeL0tVI9J08CCMI7L2-yQHOGbI?usp=sharing)
 - [reviews.csv](https://drive.google.com/drive/folders/12wM7n_ZeL0tVI9J08CCMI7L2-yQHOGbI?usp=sharing)
 - [games.csv](https://drive.google.com/drive/folders/12wM7n_ZeL0tVI9J08CCMI7L2-yQHOGbI?usp=sharing)
 - [reviews_sa.csv](https://drive.google.com/drive/folders/12wM7n_ZeL0tVI9J08CCMI7L2-yQHOGbI?usp=sharing)
   
-  ---> The file reviews_sa.csv was specially created to perform sentiment analysis of user reviews (Feature Engineering). The NLTK (Natural Language Toolkit) library was used for this purpose with the vader sentiment analyzer, which provides an ideal composite score to classify the polarity of the reviews into negative (value '0'), neutral (value '1') or positive (value '2'). Reviews written by absent users were assigned a value of "1". To see details, pls. check the notebook: [Sentiment_analysis](Notebooks/Sentiment_analysis.ipynb)
+  ---> The file `reviews_sa.csv` was specially created to perform sentiment analysis of user reviews (Feature Engineering). The `NLTK (Natural Language Toolkit)` library was used for this purpose with the `Vader Sentiment Analyzer`, which provides an ideal composite score to classify the polarity of the reviews into negative (value '0'), neutral (value '1') or positive (value '2'). Reviews written by absent users were assigned a value of "1". To see details, pls. check the notebook: [Sentiment_analysis](Notebooks/Sentiment_analysis.ipynb)
 <br />
 
 ### I.2 Exploration Data Analysis (EDA) <br />
 
-While some EDA routines were conducted during the ETL studies, this section specifically involved more in-depth analyses in the following areas: occurrence statistics, variable distribution, relationships between variables, outlier detection, and trend analysis. For further details, please refer to the notebook [xxxx].
+While some EDA routines were conducted during the ETL studies, this section specifically involved more in-depth analyses in the following areas: occurrence statistics, variable distribution, relationships between variables, outlier detection, and trend analysis. For further details, please refer to the notebook [EDA](Notebooks/EDA.ipynb).
 <br />
 
 ### I.3 Functions and ML model <br />
