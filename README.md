@@ -74,7 +74,7 @@ The code that will be consumed by the API is contained in the python file [api_f
 
 - **Description**: This model recommends five (5) games that are similar to the game title entered through the console. For this particular routine, the entered title is the ID, an integer number e.g. 32500, which identifies the game in the database.
 
-- **Methodology**: The CountVectorizer, Cosine Similarity, and the source file games_raw.csv will be employed in this process.
+- **Methodology**: The CountVectorizer, Cosine Similarity, and the source file [games_raw.csv](https://drive.google.com/drive/folders/12wM7n_ZeL0tVI9J08CCMI7L2-yQHOGbI?usp=sharing) will be employed in this process.
 
   In a first step, CountVectorizer is used to convert the text in the 'specs' column into vectors for numerical calculations. Subsequently, by defining the 'Recommendations' function and utilizing cosine similarity metrics, the target dataset is analyzed to obtain the recommended games. In order to fine-tune the recommendation system, five successive tests were conducted with 500, 1.000, 4.000, 8.000, and 15.000 records extracted from the source file. To see details, pls. check the notebook: [item_item](Notebooks/item_item.ipynb). 
   
