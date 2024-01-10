@@ -97,7 +97,7 @@ To see the MVP running with RENDER on the internet, click on [DEPLOY](https://pr
 **[[/Notebooks]](Notebooks/):** Directory housing the Jupyter notebooks containing ETL, EDA, the Feature Engineering exercise, as well as the outputs from the Endpoints and game recommendations; ETL_games.ipynb, ETL_items.ipynb, ETL_reviews.ipynb, Sentiment_analysis.ipynb, Endpoints.ipynb, item_item.ipynb
 <br />
 
-**[[/Notebooks/Datasets/api]](**[[/Notebooks/Datasets/api/):** Directory housing the CSV files consumed by the functions that make the API operational; playtimegenre.csv, sentiment_analysis.csv, userforgenre.csv, usersrecommend.csv, worstdeveloper.csv
+**[[/Notebooks/Datasets/api]](/Notebooks/Datasets/api/):** Directory housing the CSV files consumed by the functions that make the API operational; playtimegenre.csv, sentiment_analysis.csv, userforgenre.csv, usersrecommend.csv, worstdeveloper.csv
 <br />
 
 **[[/Notebooks/Datasets/ml]](/Notebooks/Datasets/ml):** Directory housing the CSV file consumed by ML function that makes the recommendation system operational; item_item_recommendation.csv
