@@ -3,6 +3,7 @@
 
 <br />
 
+#
 # VIDEO GAME RECOMMENDATION SYSTEM FOR STEAM USERS
 
 ### About STEAM
@@ -19,9 +20,9 @@ STEAM has enlisted the expertise of JD Labs to create an automated game recommen
 5. Deploy FastAPI on the Internet using the RENDER application
 
 <br />
-<br />
 
-# Project Stages
+#
+# PROJECT STAGES
 ![steamstages](https://github.com/jadiazpe/Project_ML_Games/raw/main/src_img/Steamstages.png)
 <br />
 
@@ -102,5 +103,5 @@ To see the MVP running with RENDER on the internet, click on [DEPLOY](https://pr
 **[[/Notebooks/Datasets/ml]](/Notebooks/Datasets/ml):** Directory housing the CSV file consumed by ML function that makes the recommendation system operational; item_item_recommendation.csv
 <br />
 
-**[[/src_img]](assets/):** Directory housing the PNG files used to illustrate the repository contents; jd_matrix200.png<br />
+**[[/src_img]](assets/):** Directory housing the PNG files used to illustrate the repository contents; jd_matrix200.png, Steamstages.png<br />
 
