@@ -103,5 +103,5 @@ To see the MVP running with RENDER on the internet, click on [DEPLOY](https://pr
 **[[/Notebooks/Datasets/ml]](/Notebooks/Datasets/ml):** Directory housing the CSV file consumed by ML function that makes the recommendation system operational; item_item_recommendation.csv
 <br />
 
-**[[/src_img]](assets/):** Directory housing the PNG files used to illustrate the repository contents; jd_matrix200.png, Steamstages.png<br />
+**[[/src_img]](/src_img):** Directory housing the PNG files used to illustrate the repository contents; jd_matrix200.png, Steamstages.png<br />
 
